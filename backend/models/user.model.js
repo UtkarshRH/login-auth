@@ -34,8 +34,8 @@ userSchema.pre("save", async function(next) {
     }
 });
 
-userSchema.method.matchPassword = async function(enteredPassword) {
-    return await bcrypt.compare(enteredPassword,this.password); //return true if passowd is correct 
+userSchema.methods.matchPassword = async function(enteredPassword) {
+    return await matchPassword(enteredPassword,this.password); //return true if passowd is correct 
 }
 
 //create the use model 
