@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const authForm = ({ title, onSubmit }) => {
+const AuthForm = ({ title, onSubmit }) => {
     const [formData, setFormData] = useState({ name: " ", email: " ", password: " " })
 
     const handleChange = (e) => {
@@ -39,16 +39,18 @@ const authForm = ({ title, onSubmit }) => {
                 </div>
                 <div>
                     <label>Password: </label>
-                    <input type="text"
-                        name="name"
+                    <input type="password"
+                        name="password"
                         value={formData.password}
                         onChange={handleChange}
                         placeholder="Enter your password"
                         required
-                    />
+                    />  
                 </div>
                 <button type="submit">{title}</button>
             </form>
         </>
     )
 }
+
+export default AuthForm;
